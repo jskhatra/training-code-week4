@@ -8,15 +8,15 @@ jobs:
     # needs: build
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.3.1
-      - run: dotnet test -p:CollectCoverage=true
+     - uses: actions/checkout@v2.3.1
+     - run: dotnet test -p:CollectCoverage=true
  analyze:
    needs: [build, test]
    runs-on: ubuntu-20.04
    steps:
-      - uses: actions/checkout@v2.3.1
-      - run: dotnet tool install --global dotnet-sonarscanner
-      - run: 
+     - uses: actions/checkout@v2.3.1
+     - run: dotnet tool install --global dotnet-sonarscanner
+     - run: 
           dotnet sonarscanner begin -o:'jskhatra' -k:'jskhatra_training-code-week4' -d:sonar.login='72a2094eab20206f7fc12a5945b7b66dc97d396e' -d:sonar.url='https://sonarcloud.io'
           dotnet build
           dotnet test -p:CollectCoverage=true
