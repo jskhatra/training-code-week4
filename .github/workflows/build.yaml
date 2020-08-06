@@ -9,10 +9,9 @@ jobs:
   # analyze:
   # package:
   # deploy:
+name: cibuild
 
-  name: cibuild
-  
-  on: push
+on: push
 
 
 
