@@ -8,8 +8,8 @@ jobs:
     # needs: build
     runs-on: ubuntu-20.04
     steps:
-     - uses: actions/checkout@v2.3.1
-     - run: dotnet test -p:CollectCoverage=true
+   - uses: actions/checkout@v2.3.1
+   - run: dotnet test -p:CollectCoverage=true
  analyze:
   needs: [build, test]
   runs-on: ubuntu-20.04
